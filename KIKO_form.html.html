@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>KIKO Beauty Club</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+html{width:100%;overflow-x:hidden}
+body{font-family:'Tajawal',Arial,sans-serif;background:linear-gradient(160deg,#FFF0F5,#FCE4EC);min-height:100vh;width:100%;display:block;padding:0;margin:0}
+.card{background:#fff;border-radius:0;overflow:hidden;width:100%;min-height:100vh}
+@media(min-width:520px){.card{border-radius:28px;min-height:unset;max-width:500px;margin:16px auto;box-shadow:0 12px 50px rgba(194,24,91,0.15)}}
+.hero{background:linear-gradient(135deg,#AD1457,#E91E8C);padding:30px 20px;text-align:center}
+.hero-logo{font-size:10px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:5px;margin-bottom:4px}
+.hero-brand{font-size:28px;font-weight:800;color:#fff;letter-spacing:3px;margin-bottom:16px}
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.perk{background:rgba(255,255,255,0.15);border-radius:12px;padding:10px 8px;text-align:center}
+.perk-icon{font-size:20px;margin-bottom:4px}
+.perk-ar{color:#fff;font-size:12px;font-weight:600;line-height:1.4}
+.perk-en{color:rgba(255,255,255,0.5);font-size:10px;margin-top:2px}
+.form-body{padding:22px}
+.field{margin-bottom:15px}
+label{display:block;font-size:15px;font-weight:600;color:#880E4F;margin-bottom:6px}
+.laben{font-size:11px;color:#bbb;font-weight:400;margin-right:4px}
+.req{color:#E91E8C}.opt{font-size:11px;color:#bbb}
+input,select{width:100%;padding:14px 16px;border:1.5px solid #F8BBD0;border-radius:12px;font-size:16px;font-family:'Tajawal',Arial,sans-serif;color:#212121;background:#FFFAFB;outline:none;transition:border-color 0.2s}
+input:focus,select:focus{border-color:#E91E8C;background:#fff}
+input::placeholder{color:#ddd}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23E91E8C' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left 14px center;padding-left:36px}
+.bday-row{display:grid;grid-template-columns:100px 1fr;gap:10px}
+.style-row{display:flex;gap:8px;margin-top:6px;overflow-x:auto;padding-bottom:4px}
+.style-btn{flex-shrink:0;padding:12px 18px;border:1.5px solid #F8BBD0;border-radius:20px;background:#FFFAFB;font-family:'Tajawal',Arial,sans-serif;font-size:14px;color:#880E4F;cursor:pointer;white-space:nowrap}
+.style-btn.active{background:#FCE4EC;border-color:#C2185B;font-weight:700;color:#C2185B}
+.consent-box{background:#FFF5F8;border:1.5px solid #F8BBD0;border-radius:14px;padding:14px;display:flex;align-items:flex-start;gap:12px;margin-bottom:18px;cursor:pointer}
+.consent-box input[type=checkbox]{width:22px;height:22px;flex-shrink:0;accent-color:#C2185B;cursor:pointer;margin-top:1px}
+.ctext{font-size:12px;color:#555;line-height:1.7}
+.ctext strong{color:#C2185B}
+.ctext .en{font-size:11px;color:#bbb;display:block;margin-top:3px}
+.submit-btn{width:100%;padding:18px;background:linear-gradient(135deg,#C2185B,#E91E8C);color:#fff;border:none;border-radius:14px;font-size:18px;font-weight:700;font-family:'Tajawal',Arial,sans-serif;cursor:pointer}
+.submit-btn:disabled{opacity:0.3;cursor:not-allowed}
+.fnote{font-size:11px;color:#bbb;margin-top:3px}
+.success{display:none;text-align:center;padding:36px 20px}
+.s-icon{font-size:64px;margin-bottom:14px}
+.s-title{font-size:22px;font-weight:800;color:#C2185B;margin-bottom:8px}
+.s-card{background:linear-gradient(135deg,#FCE4EC,#F8BBD0);border-radius:18px;padding:18px;margin:14px 0;text-align:right}
+.s-perk{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.s-perk:last-child{margin-bottom:0}
+.s-perk-icon{font-size:18px;flex-shrink:0}
+.s-perk-text{font-size:13px;color:#212121;line-height:1.5}
+.s-perk-text small{color:#888;font-size:11px;display:block}
+.new-btn{padding:13px 32px;background:#FCE4EC;color:#C2185B;border:none;border-radius:12px;font-size:14px;font-weight:700;font-family:'Tajawal',Arial,sans-serif;cursor:pointer}
+.error-msg{background:#FFEBEE;color:#C62828;border-radius:10px;padding:10px 14px;font-size:13px;margin-bottom:14px;display:none}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="hero">
+    <div class="hero-logo">KIKO MILANO</div>
+    <div class="hero-brand">Beauty Club 🌸</div>
+    <div class="perks">
+      <div class="perk"><div class="perk-icon">💄</div><div class="perk-ar">جلسة مكياج مجانية في عيد ميلادك</div><div class="perk-en">Free makeup session on your birthday</div></div>
+      <div class="perk"><div class="perk-icon">🎁</div><div class="perk-ar">فاوتشر مفاجأة حصري لكِ</div><div class="perk-en">Surprise exclusive voucher</div></div>
+      <div class="perk"><div class="perk-icon">✨</div><div class="perk-ar">أول من يعرف الكوليكشن الجديد</div><div class="perk-en">First to know new arrivals</div></div>
+      <div class="perk"><div class="perk-icon">💝</div><div class="perk-ar">عروض حصرية للأعضاء</div><div class="perk-en">Exclusive member deals</div></div>
+    </div>
+  </div>
+
+  <div class="form-body" id="formBody">
+    <div id="errorMsg" class="error-msg">حدث خطأ، حاولي مرة أخرى / Error, please try again</div>
+
+    <div class="field">
+      <label>المتجر <span class="laben">Store</span> <span class="req">*</span></label>
+      <select id="storeSelect" autocomplete="off">
+        <option value="">اختاري المتجر... Select store</option>
+        <option value="KIKO Nakheel Mall - Riyadh">KIKO Nakheel Mall - Riyadh</option>
+        <option value="KIKO Nakheel Mall - Dammam">KIKO Nakheel Mall - Dammam</option>
+        <option value="KIKO Mall of Arabia - Jeddah">KIKO Mall of Arabia - Jeddah</option>
+        <option value="KIKO Hamra Mall - Riyadh">KIKO Hamra Mall - Riyadh</option>
+        <option value="KIKO Mall of Dhahran - Khobar">KIKO Mall of Dhahran - Khobar</option>
+        <option value="KIKO Makkah Mall - Makkah">KIKO Makkah Mall - Makkah</option>
+        <option value="KIKO Jouri Mall - Taif">KIKO Jouri Mall - Taif</option>
+        <option value="KIKO Al Noor - Madinah">KIKO Al Noor - Madinah</option>
+        <option value="KIKO Jeddah Park - Jeddah">KIKO Jeddah Park - Jeddah</option>
+        <option value="KIKO Ehsa Mall - Hofuf">KIKO Ehsa Mall - Hofuf</option>
+        <option value="KIKO Yasmin Mall - Jeddah">KIKO Yasmin Mall - Jeddah</option>
+        <option value="KIKO U-Walk Jeddah">KIKO U-Walk Jeddah</option>
+        <option value="KIKO Aziz Mall - Jeddah">KIKO Aziz Mall - Jeddah</option>
+        <option value="KIKO Uwalk - Riyadh">KIKO Uwalk - Riyadh</option>
+        <option value="KIKO Jubail Mall - Jubail">KIKO Jubail Mall - Jubail</option>
+        <option value="KIKO Khaleej Mall - Riyadh">KIKO Khaleej Mall - Riyadh</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>واتساب <span class="laben">WhatsApp</span> <span class="req">*</span></label>
+      <input type="tel" id="mobile" placeholder="05XXXXXXXX" autocomplete="off">
+    </div>
+
+    <div class="field">
+      <label>الاسم <span class="laben">Name</span> <span class="req">*</span></label>
+      <input type="text" id="name" placeholder="الاسم الأول... First name" autocomplete="off">
+    </div>
+
+    <div class="field">
+      <label>البريد الإلكتروني <span class="laben">Email</span> <span class="opt">(اختياري / Optional)</span></label>
+      <input type="email" id="email" placeholder="example@email.com" autocomplete="off">
+    </div>
+
+    <div class="field">
+      <label>عيد الميلاد <span class="laben">Birthday</span> <span class="req">*</span></label>
+      <div class="bday-row">
+        <input type="number" id="birthDay" placeholder="اليوم" min="1" max="31" autocomplete="off">
+        <select id="birthMonth" autocomplete="off">
+          <option value="">الشهر — Month</option>
+          <option value="1">يناير — January</option>
+          <option value="2">فبراير — February</option>
+          <option value="3">مارس — March</option>
+          <option value="4">أبريل — April</option>
+          <option value="5">مايو — May</option>
+          <option value="6">يونيو — June</option>
+          <option value="7">يوليو — July</option>
+          <option value="8">أغسطس — August</option>
+          <option value="9">سبتمبر — September</option>
+          <option value="10">أكتوبر — October</option>
+          <option value="11">نوفمبر — November</option>
+          <option value="12">ديسمبر — December</option>
+        </select>
+      </div>
+      <div class="fnote">لا نحتاج السنة — اليوم والشهر فقط</div>
+    </div>
+
+    <div class="field">
+      <label>لوكك المفضل <span class="laben">Favourite look</span></label>
+      <div class="style-row">
+        <button type="button" class="style-btn" onclick="selectStyle(this,'Glam & Bold')">💄 جلام وبولد</button>
+        <button type="button" class="style-btn" onclick="selectStyle(this,'Natural & Fresh')">🌿 طبيعي</button>
+        <button type="button" class="style-btn" onclick="selectStyle(this,'Everyday Classic')">✨ كلاسيك</button>
+        <button type="button" class="style-btn" onclick="selectStyle(this,'Trendy & Creative')">🎨 تريندي</button>
+      </div>
+    </div>
+
+    <div class="consent-box" onclick="toggleConsent()">
+      <input type="checkbox" id="consent" checked>
+      <div class="ctext">
+        أوافق على استلام <strong>مفاجأة عيد ميلادي</strong> والكوليكشنات الجديدة والعروض الحصرية من KIKO Milano عبر الواتساب
+        <span class="en">I agree to receive my birthday surprise, new collections and exclusive offers via WhatsApp</span>
+      </div>
+    </div>
+
+    <button class="submit-btn" id="submitBtn" onclick="submitForm()" disabled>
+      سجّلي الآن — Join KIKO Beauty Club 🌸
+    </button>
+  </div>
+
+  <div id="successDiv" class="success">
+    <div class="s-icon">🎉</div>
+    <div class="s-title">أهلاً في KIKO Beauty Club!</div>
+    <p style="font-size:13px;color:#888;margin-bottom:12px">تم تسجيلك بنجاح — You're officially a KIKO member 🌸</p>
+    <div class="s-card">
+      <div class="s-perk"><div class="s-perk-icon">💄</div><div class="s-perk-text">جلسة مكياج مجانية في عيد ميلادك<small>Free makeup session on your birthday</small></div></div>
+      <div class="s-perk"><div class="s-perk-icon">🎁</div><div class="s-perk-text">فاوتشر مفاجأة حصري لكِ<small>A surprise exclusive voucher just for you</small></div></div>
+      <div class="s-perk"><div class="s-perk-icon">✨</div><div class="s-perk-text">أول من تعرفين عن الكوليكشنات والعروض<small>First to know new arrivals & promos</small></div></div>
+    </div>
+    <button class="new-btn" onclick="resetForm()">تسجيل عميلة جديدة — New customer</button>
+  </div>
+</div>
+
+<script>
+var POWER_AUTOMATE_URL = "PASTE_YOUR_POWER_AUTOMATE_URL_HERE";
+var selectedStyle = "";
+var preStore = new URLSearchParams(window.location.search).get("store") || "";
+if (preStore) document.getElementById("storeSelect").value = preStore;
+
+function checkSubmit() {
+  var ok = document.getElementById("mobile").value.trim()
+        && document.getElementById("name").value.trim()
+        && document.getElementById("storeSelect").value;
+  document.getElementById("submitBtn").disabled = !ok;
+}
+document.getElementById("storeSelect").addEventListener("change", checkSubmit);
+document.getElementById("mobile").addEventListener("input", checkSubmit);
+document.getElementById("name").addEventListener("input", checkSubmit);
+document.getElementById("consent").addEventListener("change", checkSubmit);
+checkSubmit();
+
+function selectStyle(btn, style) {
+  document.querySelectorAll(".style-btn").forEach(function(b){b.classList.remove("active");});
+  btn.classList.add("active"); selectedStyle = style;
+}
+function toggleConsent() {
+  var cb=document.getElementById("consent"); cb.checked=!cb.checked; checkSubmit();
+}
+function submitForm() {
+  var btn=document.getElementById("submitBtn");
+  btn.disabled=true; btn.textContent="جاري التسجيل...";
+  document.getElementById("errorMsg").style.display="none";
+  var data={
+    store: document.getElementById("storeSelect").value,
+    mobile: document.getElementById("mobile").value.trim(),
+    name: document.getElementById("name").value.trim(),
+    email: document.getElementById("email").value.trim(),
+    birthDay: document.getElementById("birthDay").value,
+    birthMonth: document.getElementById("birthMonth").value,
+    style: selectedStyle,
+    consent: document.getElementById("consent").checked?"Yes":"No",
+    entryDate: new Date().toLocaleDateString("en-GB")
+  };
+  fetch(POWER_AUTOMATE_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)})
+  .then(function(res){
+    if(res.ok||res.status===202){
+      document.getElementById("formBody").style.display="none";
+      document.getElementById("successDiv").style.display="block";
+    } else { throw new Error("Failed"); }
+  })
+  .catch(function(){
+    btn.disabled=false;
+    btn.textContent="سجّلي الآن — Join KIKO Beauty Club 🌸";
+    document.getElementById("errorMsg").style.display="block";
+  });
+}
+function resetForm() {
+  document.getElementById("formBody").style.display="block";
+  document.getElementById("successDiv").style.display="none";
+  ["mobile","name","email","birthDay"].forEach(function(id){document.getElementById(id).value="";});
+  document.getElementById("birthMonth").value="";
+  document.getElementById("consent").checked=true;
+  if(!preStore) document.getElementById("storeSelect").value="";
+  document.querySelectorAll(".style-btn").forEach(function(b){b.classList.remove("active");});
+  selectedStyle=""; checkSubmit();
+  document.getElementById("submitBtn").textContent="سجّلي الآن — Join KIKO Beauty Club 🌸";
+}
+</script>
+</body>
+</html>
